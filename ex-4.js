@@ -1,10 +1,17 @@
 function findOdd(nums) {
-  return nums.reduce((acc, cur) => {
-    if (cur % 2 === 1) {
-      acc += 1;
+  let countNumObj = {};
+  for (num of nums) {
+    if (countNumObj[num] === undefined) {
+      countNumObj[num] = 1;
+    } else {
+      countNumObj[num] += 1;
     }
-    return acc;
-  });
+  }
+  for (num in countNumObj) {
+    if (countNumObj[num] % 2 === 1) {
+      return Number(num);
+    }
+  }
 }
 
 let result1 = findOdd([0]);
