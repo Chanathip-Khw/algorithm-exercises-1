@@ -1,5 +1,10 @@
 function findOdd(nums) {
-  // Start coding here
+  return nums.reduce((acc, cur) => {
+    if (cur % 2 === 1) {
+      acc += 1;
+    }
+    return acc;
+  });
 }
 
 let result1 = findOdd([0]);

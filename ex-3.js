@@ -1,5 +1,17 @@
 function singleNumber(nums) {
-  // Start coding here
+  let countNumObj = {};
+  for (num of nums) {
+    if (countNumObj[num] === undefined) {
+      countNumObj[num] = 1;
+    } else {
+      countNumObj[num] += 1;
+    }
+  }
+  for (num in countNumObj) {
+    if (countNumObj[num] === 1) {
+      return Number(num);
+    }
+  }
 }
 
 let result1 = singleNumber([2, 2, 1]);
